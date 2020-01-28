@@ -1,6 +1,5 @@
 package com.dbe.distributed.systems.shared.clock;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.HashSet;

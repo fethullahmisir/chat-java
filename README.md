@@ -50,11 +50,11 @@ leader ship and manage the group membership initially. The servers are identifie
 With the following commands two server applications are started. Bear in mind that you still have to replace
 the `IP_ADDRESS` with your own ip address.
 
-`java -jar -DIP_ADDRESS=192.168.43.220 -DTCP_SERVER_PORT=8080 -DMEMBER_ID=10 .\target\chat-server.jar`
+`java -jar -DIP_ADDRESS=192.168.43.220 -DTCP_SERVER_PORT=8080 -DMEMBER_ID=10 ./target/chat-server.jar`
 
-`java -jar -DIP_ADDRESS=192.168.43.220 -DTCP_SERVER_PORT=8020 -DMEMBER_ID=20 .\target\chat-server.jar`
+`java -jar -DIP_ADDRESS=192.168.43.220 -DTCP_SERVER_PORT=8020 -DMEMBER_ID=20 ./target/chat-server.jar`
 
-`java -jar -DIP_ADDRESS=192.168.43.220 -DTCP_SERVER_PORT=8010 -DMEMBER_ID=30 .\target\chat-server.jar`
+`java -jar -DIP_ADDRESS=192.168.43.220 -DTCP_SERVER_PORT=8010 -DMEMBER_ID=30 ./target/chat-server.jar`
 
 The network interface of the ip address have to support multicast. 
 The client and server applications are using multicast for dynamic host discovery. The server distributes 
@@ -76,7 +76,7 @@ in back ground threads.
 
 After that you can start the client multiple times: 
 
-`java -jar -DIP_ADDRESS=192.168.43.220 .\target\chat-client.jar`
+`java -jar -DIP_ADDRESS=192.168.43.220 ./target/chat-client.jar`
 
 You should now be able to send and receive chat messages. 
 Shutting one server done will result in a leader election. The one with the highest MEMBER_ID will be
