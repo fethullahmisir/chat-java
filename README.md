@@ -45,9 +45,9 @@ And the client application with:
 
 ## Example cluster setup
 
-You can start multiple server applications. The first started server will take over the 
-leader ship and manage the group membership initially. The servers are identified by the `MEMBER_ID`. 
-With the following commands two server applications are started. Bear in mind that you still have to replace
+You can start multiple server applications. The first started server acts as the 
+leader and manages the group membership initially. The servers are identified by the `MEMBER_ID`. 
+With the following commands two server applications are started. Bear in mind that you have to replace
 the `IP_ADDRESS` with your own ip address.
 
 `java -jar -DIP_ADDRESS=192.168.43.220 -DTCP_SERVER_PORT=8080 -DMEMBER_ID=10 ./target/chat-server.jar`
@@ -61,7 +61,7 @@ The client and server applications are using multicast for dynamic host discover
 chat message over multicast as well. 
 
 
-You should see in the logs of the leader, the first server you started, the  replication of the members view to 
+You should see in the logs of the leader the  replication of the members view to 
 the other servers like:
 
 ```

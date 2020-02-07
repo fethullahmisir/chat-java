@@ -24,7 +24,6 @@ public class ChatUi extends JFrame {
 
 
         setLayout(new GridLayout(2, 2));
-        // upper chat part
         chatMessagesShowArea.setEditable(false);
         add(chatMessagesShowArea);
         JScrollPane scrollPaneShowArea = new JScrollPane(chatMessagesShowArea,
@@ -41,23 +40,14 @@ public class ChatUi extends JFrame {
 
         add(bottomPanel);
 
-        // Erzeugung eines JSplitPane-Objektes mit horizontaler Trennung
         JSplitPane splitpane = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
-        // Hier setzen wir links unser rotes JPanel und rechts das gelbe
-        //splitpane.setLeftComponent(meinJDialog);
         splitpane.setRightComponent(bottomPanel);
 
-        // Hier fügen wir unserem Dialog unser JSplitPane hinzu
         add(splitpane);
-        // Wir lassen unseren Dialog anzeigen
         setVisible(true);
 
-        // starte in der mitte
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
-
-        // reagiere auf key + button events
-
         registerHandlers();
     }
 
@@ -78,9 +68,6 @@ public class ChatUi extends JFrame {
             chatController.sendTextMessage(chatMessage);
             chatMessagesSendArea.setText("");
             chatMessagesSendArea.requestFocus(true);
-            //chatMessagesSendArea.requestFocusInWindow();
-
-
         });
     }
 

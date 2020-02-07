@@ -37,12 +37,8 @@ public class MulticastReceiver implements Runnable {
             MulticastSocket socket = new MulticastSocket(multicastPort);
             socket.setLoopbackMode(false);
             socket.setBroadcast(true);
-            //TODO add network interface ip address
             socket.setInterface(networkInterfaceAddress);
-            //set -Djava.net.preferIPv4Stack=true
             socket.setTimeToLive(1);
-            //   InetSocketAddress inetSocketAddress = new InetSocketAddress(group, multicastPort);
-            //socket.joinGroup(inetSocketAddress, NetworkInterface.getByName("192.168.0.192"));
             socket.joinGroup(group);
             logger.info("Listening for multicast messages on port {} and group {}.", multicastPort, group.getHostAddress());
             while (true) {

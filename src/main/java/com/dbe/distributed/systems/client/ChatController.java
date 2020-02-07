@@ -37,7 +37,6 @@ public class ChatController implements MulticastReceiver.MessageHandler {
         this.id = UUID.randomUUID().toString();
         this.holdBackQueue = new HoldBackQueue(multicastPublisher, message -> {
             if (chatMessageConsumer != null) {
-                // clock.merge(message.getVectorClock());
                 chatMessageConsumer.accept(message);
             }
         });

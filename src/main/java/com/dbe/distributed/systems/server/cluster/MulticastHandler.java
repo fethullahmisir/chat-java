@@ -23,10 +23,6 @@ public class MulticastHandler implements MulticastReceiver.MessageHandler {
     @Override
     public void handle(ConnectionDetails details, BaseMessage message) {
         LOG.info("Multicast received with type {}", message.getType());
-     /* if (member.getAddress().equals(details.getFrom().getHostAddress())) {
-            LOG.info("Multicast message is from self and will ignored.");
-            return;
-        }*/
         MulticastReceiver.MessageHandler messageHandler = multicastHandlers.get(message.getClass());
         if (null == messageHandler) {
             LOG.info("There is no multicast handler registered for message type {}.", message.getType());

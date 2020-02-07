@@ -103,9 +103,7 @@ public class MemberService implements MulticastReceiver.MessageHandler, TcpServe
     public void handle(ConnectionDetails details, BaseMessage message) {
         if (serverType.isMaster()) {
             handleMasterMessages(details, message);
-            //  return;
         }
-        //throw new UnsupportedOperationException("Message of type " + message.getType() + " is not handled.");
     }
 
     @Override
